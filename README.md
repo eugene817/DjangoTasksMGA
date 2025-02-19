@@ -1,3 +1,4 @@
 # DjangoTasksMGA
 
 initing
+# DjangoTasksMGA
