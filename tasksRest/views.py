@@ -25,3 +25,4 @@ class TasksViewSet(viewsets.ModelViewSet):
         history_qs = task.history.all().order_by('-history_date')
         serializer = TaskHistorySerializer(history_qs, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+

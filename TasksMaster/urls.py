@@ -9,5 +9,12 @@ router.register(r'tasks', TasksViewSet, basename='tasks')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # main api endpoint
     path('api/', include(router.urls)),
+
+    # tokens and registration
+    path('api/accounts/', include('accounts.urls')),
+
+ 
 ]
