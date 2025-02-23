@@ -53,6 +53,22 @@ return: status 200
 
 #### TASKS
 
+- Example task data
+```json
+{
+    "id": 2,
+    "name": "testPostman123",
+    "description": null,
+    "status": "Nowy",
+    "assigned_user": {
+        "id": 1,
+        "username": "user1"
+    },
+    "created_at": "2025-02-23T20:29:17.518633Z",
+    "updated_at": "2025-02-23T20:29:17.518644Z"
+}
+```
+
 - The main endpoint is `/api/tasks/{optional: id}`
 
 - You can: GET (all and one), POST, DELETE, PUT
