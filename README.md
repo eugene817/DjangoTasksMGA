@@ -62,4 +62,36 @@ return: status 200
 > to assign user you need to "assigned_user_id": id
 
 
+- Tasks creation
+```bash
+curl -X POST http://localhost:8000/api/tasks/ \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "test123", "assigned_user_id": 1}'
+```
 
+- Update first task
+```bash
+curl -X PUT http://localhost:8000/api/tasks/1/ \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "testPostman4", "assigned_user_id": 1}'
+```
+
+- Get all tasks
+```bash
+curl -X GET http://localhost:8000/api/tasks/ \
+  -H "Authorization: Bearer <token>"
+```
+
+- Get task 1
+```bash
+curl -X GET http://localhost:8000/api/tasks/1/ \
+  -H "Authorization: Bearer <token>"
+```
+
+- Delete task number 1
+```bash
+curl -X DELETE http://localhost:8000/api/tasks/1/ \
+  -H "Authorization: Bearer <token>"
+```
