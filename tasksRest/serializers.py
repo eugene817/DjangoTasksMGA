@@ -33,7 +33,6 @@ class TasksSerializer(serializers.ModelSerializer):
 
 
 class TaskHistorySerializer(serializers.ModelSerializer):
-    # Если хотим красиво отобразить пользователя, сделаем SerializerMethodField
     history_user_username = serializers.SerializerMethodField()
 
     class Meta:
