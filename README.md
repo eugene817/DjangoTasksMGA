@@ -1,2 +1,65 @@
 # DjangoTasksMGA
 
+> This is 'tasks manager' app for MGA application
+
+### RUN
+- To run this app you need to have docker, docker-compose and Make
+
+1. Simply run 
+```bash
+make up
+```
+- Test will run automatically and in case of failure the app won't start
+2. Go to the `localhost:8000/` to verify the app launch
+
+### USAGE
+
+#### Register
+
+- First you need to register _new user_, using the endpoints:
+`/api/accounts/register/`
+with payload:
+```json
+{
+    "username": "user1",
+    "email": "test@user1.com",
+    "password": "1234",
+    "password2": "1234"
+}
+```
+return: **status 201**
+```JSON
+{
+    "message": "User created successfully"
+}
+```
+
+
+- Then use the `/api/accounts/token/` with payload:
+```json
+{
+    "username": "user1",
+    "password": "1234"
+}
+```
+
+return: status 200
+```json
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9....",
+    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9....."
+}
+```
+
+#### TASKS
+
+- The main endpoint is `/api/tasks/{optional: id}`
+
+- You can: GET (all and one), POST, DELETE, PUT
+
+> POST, PUT
+> minimal payload is "name":"name"
+> to assign user you need to "assigned_user_id": id
+
+
+
